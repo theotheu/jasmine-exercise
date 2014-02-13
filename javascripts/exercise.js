@@ -7,9 +7,8 @@ var testObj = {
     }
 };
 
-function myBtnClickHandler(val) {
-    console.log('myBtnClickHandler is called with val = ', val);
-    return true;
+function myBtnClickHandler(e) {
+    console.log('myBtnClickHandler is called with arguments = ', arguments);
 }
 
 function helloWorld() {

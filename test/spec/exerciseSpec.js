@@ -29,10 +29,16 @@ describe("Module, object, attribute, method test", function () {
 });
 
 
+function fn() {
+    return 123;
+    alert(123);
+
+}
+
 describe("Events", function () {
     var node;
 
-    // create HTML element
+    // create HTML element and add event listener
     beforeEach(function () {
         node = document.createElement("div");
         node.innerHTML = '<input type="button" value="Click me" id="myBtn">';
@@ -40,6 +46,10 @@ describe("Events", function () {
         document.getElementById("myBtn").addEventListener("click", myBtnClickHandler, false);
     });
 
+    it("Test that listener is attached", function () {
+        var exist = document.getElementById("myBtn").click !== null;
+        expect(exist).toEqual(true);
+    });
 
     it("Click on button simulated", function () {
         spyOn(window, "myBtnClickHandler");
@@ -50,7 +60,7 @@ describe("Events", function () {
     // delete HTML element
     afterEach(function () {
         node = document.getElementById("myBtn");
-        if(node) {
+        if (node) {
             node.parentNode.removeChild(node);
         }
     });
