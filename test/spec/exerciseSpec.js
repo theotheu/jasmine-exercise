@@ -35,7 +35,7 @@ function fn() {
 
 }
 
-describe("Events", function () {
+describe("Events (are side effects)", function () {
     var node;
 
     // create HTML element and add event listener
