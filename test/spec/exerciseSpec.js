@@ -28,47 +28,6 @@ describe("Module, object, attribute, method test", function () {
     });
 });
 
-
-function fn() {
-    return 123;
-    alert(123);
-
-}
-
-describe("Events (are side effects)", function () {
-    var node;
-
-    // create HTML element and add event listener
-    beforeEach(function () {
-        node = document.createElement("div");
-        node.innerHTML = '<input type="button" value="Click me" id="myBtn">';
-        document.getElementsByTagName("body")[0].appendChild(node);
-        document.getElementById("myBtn").addEventListener("click", myBtnClickHandler, false);
-    });
-
-    it("Test that listener is attached", function () {
-        var exist = document.getElementById("myBtn").click !== null;
-        expect(exist).toEqual(true);
-    });
-
-    it("Click on button simulated", function () {
-        spyOn(window, "myBtnClickHandler");
-        document.getElementById("myBtn").click(window.myBtnClickHandler());
-        expect(window.myBtnClickHandler).toHaveBeenCalled();
-    });
-
-    // delete HTML element
-    afterEach(function () {
-        node = document.getElementById("myBtn");
-        if (node) {
-            node.parentNode.removeChild(node);
-        }
-    });
-
-
-});
-
-
 describe("Testing for side effects", function () {
     it("Test for alert", function () {
         spyOn(window, "alert");
@@ -90,4 +49,35 @@ describe("Testing for side effects", function () {
         expect(retVal).toEqual("tezzt");
     });
 
+});
+
+describe("Testing with events (are also side effects)", function () {
+    var node;
+
+    // create HTML element and add event listener
+    beforeEach(function () {
+        node = document.createElement("div");
+        node.innerHTML = '<input type="button" value="Click me" id="myBtn">';
+        document.getElementsByTagName("body")[0].appendChild(node);
+        document.getElementById("myBtn").addEventListener("click", myBtnClickHandler, false);
+    });
+
+    it("Test that listener is attached", function () {
+        var exist = document.getElementById("myBtn") && document.getElementById("myBtn").click !== null;
+        expect(exist).toEqual(true);
+    });
+
+    it("Click on button simulated", function () {
+        spyOn(window, "myBtnClickHandler");
+        document.getElementById("myBtn").click(window.myBtnClickHandler());
+        expect(window.myBtnClickHandler).toHaveBeenCalled();
+    });
+
+    // delete HTML element
+    afterEach(function () {
+        node = document.getElementById("myBtn");
+        if (node) {
+            node.parentNode.removeChild(node);
+        }
+    });
 });
