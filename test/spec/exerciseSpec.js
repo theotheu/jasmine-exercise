@@ -4,7 +4,8 @@ describe("Tezzt", function () {
     });
 });
 
-describe("Testing for side effects", function () {
+describe("Module, object, attribute, method test", function () {
+
     it("Test for object, attribute 1", function () {
         var retVal = testObj.attribute1;
         expect(retVal).toEqual(1);
@@ -25,7 +26,40 @@ describe("Testing for side effects", function () {
         var retVal = testObj.attribute4();
         expect(retVal).toEqual(true);
     });
+});
 
+
+describe("Events", function () {
+    var node;
+
+    // create HTML element
+    beforeEach(function () {
+        node = document.createElement("div");
+        node.innerHTML = '<input type="button" value="Click me" id="myBtn">';
+        document.getElementsByTagName("body")[0].appendChild(node);
+        document.getElementById("myBtn").addEventListener("click", myBtnClickHandler, false);
+    });
+
+
+    it("Click on button simulated", function () {
+        spyOn(window, "myBtnClickHandler");
+        document.getElementById("myBtn").click(window.myBtnClickHandler());
+        expect(window.myBtnClickHandler).toHaveBeenCalled();
+    });
+
+    // delete HTML element
+    afterEach(function () {
+        node = document.getElementById("myBtn");
+        if(node) {
+            node.parentNode.removeChild(node);
+        }
+    });
+
+
+});
+
+
+describe("Testing for side effects", function () {
     it("Test for alert", function () {
         spyOn(window, "alert");
         sayHi();

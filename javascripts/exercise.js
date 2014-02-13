@@ -7,6 +7,11 @@ var testObj = {
     }
 };
 
+function myBtnClickHandler(val) {
+    console.log('myBtnClickHandler is called with val = ', val);
+    return true;
+}
+
 function helloWorld() {
     return "Hello World!";
 }
@@ -21,4 +26,8 @@ function sayYes() {
 
 function whoAreYou() {
     return prompt("Please type (exact): tezzt");
+}
+
+if(document.getElementById("myBtn")) {
+    document.getElementById("myBtn").addEventListener("click", myBtnClickHandler, false);
 }
