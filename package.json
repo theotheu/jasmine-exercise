@@ -1,0 +1,14 @@
+{
+    "name": "unitTestingJavascript",
+    "version": "0.0.1",
+    "description": "npm files needed to unit test javascript in isolation",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/theotheu/jasmine-exercise.git"
+    },
+    "dependencies": {
+        "jasmine-node": "*",
+        "jsdom": "*",
+        "jasmine-jquery": "*"
+    }
+}
