@@ -17,7 +17,7 @@ describe("A suite", function() {
 
 describe("Something", function () {
     it("Response should contain 'Hello and welcome!'", function (done) {
-        request("http://server7.tezzt.nl/~theotheu/jasmine-exercise/", function (error, response, body) {
+        request("http://localhost/~theotheu/jasmine-exercise/", function (error, response, body) {
             expect(body).toContain("Hello and welcome!");
             done();
         });
