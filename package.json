@@ -7,6 +7,7 @@
         "url": "https://github.com/theotheu/jasmine-exercise.git"
     },
     "dependencies": {
+        "request": "*",
         "jasmine-node": "*",
         "jsdom": "*",
         "jasmine-jquery": "*"

@@ -8,7 +8,7 @@ describe ("first test suite", function(){
 })
 
 var request = require('request');
-/*
+
 describe("A suite", function() {
     it("contains spec with an expectation", function() {
         expect(true).toBe(true);
@@ -23,4 +23,4 @@ describe("Something", function () {
         });
     });
 })
-    */
+
