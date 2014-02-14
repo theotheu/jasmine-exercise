@@ -10,6 +10,7 @@ Install jasmine-node
 
 Mac setup with apache
 ---------------------
+Apache is default installed, no XAMP or WAMP is needed.
 
 * Create directory for documentroot `mkdir ~/Sites`
 * Create a file `sudo vi /etc/apache2/users/username.conf`
@@ -20,4 +21,4 @@ Mac setup with apache
        Allow from all
    </Directory>```
 * `sudo apachectl start`
-
+* Point your browser to http://localhost/~username
