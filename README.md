@@ -4,9 +4,13 @@ http://localhost/specRunner.html
 
 Alternative jasmine-node
 ------------------------
-Install jasmine-node
+It is assumed you have installed node.js.
+
+
+Install jasmine-node.
 ```npm install jasmine-node -g```
 
+Install the required modules.
 ```npm install```
 
 Run the tests with
