@@ -7,6 +7,11 @@ Alternative jasmine-node
 Install jasmine-node
 ```npm install jasmine-node -g```
 
+```npm install```
+
+Run the tests with
+```jasmine-node --verbose spec``
+
 
 Mac setup with apache
 ---------------------
