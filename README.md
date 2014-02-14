@@ -10,7 +10,7 @@ Install jasmine-node
 ```npm install```
 
 Run the tests with
-```jasmine-node --verbose spec``
+`jasmine-node --verbose spec`
 
 
 Mac setup with apache
